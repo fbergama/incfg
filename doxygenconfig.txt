@@ -1,0 +1,13 @@
+PROJECT_NAME     = incfg
+PROJECT_BRIEF    = "Inline C++ configuration options"
+#PROJECT_LOGO   = 
+CREATE_SUBDIRS   = NO
+INPUT            = incfg.hpp incfg.cpp
+SEARCHENGINE     = NO
+OUTPUT_DIRECTORY = docs
+WARNINGS         = YES
+GENERATE_LATEX   = NO
+HTML_HEADER      = doxygen/header.html
+HTML_FOOTER      = doxygen/footer.html
+HTML_EXTRA_STYLESHEET= doxygen/customdoxygen.css
+HTML_EXTRA_FILES = doxygen/doxy-boot.js
