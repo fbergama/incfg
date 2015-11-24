@@ -60,11 +60,11 @@ void logtofile( std::string log_data )
 ```
 
 The ```INCFG_REQUIRE()``` macro registers a new configuration option by specifying:
-1. A type
-2. A name (the key)
+
+1. A type ```T```
+2. A name
 3. A default value (must be castable to the type specified before)
 4. A string describing the configuration option (Used to generate the configuration string/file automatically)
-
 
 At this point, options can be freely (and safely!) retrieved inside the function body:
 
