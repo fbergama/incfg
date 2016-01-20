@@ -241,6 +241,8 @@ THE SOFTWARE.
 #include <map>
 #include <sstream>
 #include <iostream>
+#include <stdexcept>
+#include <algorithm>
 
 
 /*! \file incfg.hpp
