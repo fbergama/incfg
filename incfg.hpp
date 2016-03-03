@@ -402,11 +402,13 @@ namespace incfg
             }
         }
 
+
         /*!
          * \brief Returns the ```Option``` interface to a given option key
          * \param name option name (key)
          */
         inline Option* get( std::string name )  { return options[ name ]; }
+
 
         /*!
          * \brief Loads configuration options from an input stream
@@ -414,11 +416,13 @@ namespace incfg
          */
         void load( std::istream& _isr);
 
+
         /*!
          * \brief Loads configuration options from an std::string
          * \param _str configuration string
          */
         void load( std::string& _str );
+
 
         /*!
          * \brief Loads configuration options from the command line
@@ -444,6 +448,39 @@ namespace incfg
             }
             return ss.str();
         }
+
+
+        /*!
+         * \brief returns the number of currenlty managed configuration options
+         */
+        inline size_t size() const
+        {
+            return options.size();
+        }
+
+
+        /*!
+         * \brief option_by_index returns the idx^th configuration option
+         * \param idx index (0..size()-1) of the configuration option
+         */
+        inline Option* option_by_index( size_t idx ) const
+        {
+            std::map< std::string, Option* >::const_iterator it = options.begin();
+
+            while( idx>0 )
+            {
+                ++it;
+                --idx;
+            }
+
+            if( it!=options.end() )
+            {
+                return it->second;
+            }
+
+            return 0;
+        }
+
 
     private:
         inline ConfigOptions() {}
