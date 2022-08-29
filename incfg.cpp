@@ -113,6 +113,9 @@ void ConfigOptions::load( std::istream& _isr)
         buff.erase(std::remove( buff.begin()+start_idx, buff.end(), ' '), buff.end() );
 
 
+        buff.erase(std::remove( buff.begin()+start_idx, buff.end(), '\r'), buff.end() );
+
+
         size_t eq_idx = buff.find_first_of('=');
 
         if( eq_idx == std::string::npos || eq_idx==0 )
